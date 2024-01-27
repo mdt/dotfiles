@@ -138,9 +138,6 @@ export PATH="$PATH:/Users/mdt/Library/Python/3.9/bin"
 # Created by `pipx` on 2021-08-03 18:28:58
 export PATH="$PATH:/Users/mdt/.local/bin"
 
-source /opt/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 eval "$(_GITLINT_COMPLETE=zsh_source gitlint)"
 source /opt/local/share/fzf/shell/key-bindings.zsh
 source /opt/local/share/fzf/shell/completion.zsh
@@ -150,3 +147,7 @@ export FZF_DEFAULT_COMMAND='fd --type file --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 bindkey "ç" fzf-cd-widget
 eval "$(thefuck --alias)"
+
+source /opt/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Zsh Syntax Highlighting needs to come last:
+source /opt/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
