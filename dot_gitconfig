@@ -1,10 +1,65 @@
+[add.interactive]
+    useBuiltin = false
+[alias]
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+  # Pretty log output
+  hist = log --graph --pretty=format:'%Cred%h%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)%Creset [%an]' --abbrev-commit --date=relative
+[color]
+  # Use colors in Git commands that are capable of colored output when
+  # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[commit]
+	template = /Users/mdt/.stCommitMsg
 [core]
-	pager = delta
+	excludesfile = /Users/mdt/.gitignore
+	editor = code --wait
+	autocrlf = input
+    pager = delta --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
+[credential]
+	helper = osxkeychain
+[delta]
+    navigate = true # Use n and N to move between diff sections.
+    light = false # Set to `true` if you prefer light themes.
+    side-by-side = true # Enables the side-by-side view.
+[diff]
+    colorMoved = default
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[init]
+	defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = diff3
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
 [user]
-	name = Marc Tanner
+	name = Marc D. Tanner
 	email = mdt@users.noreply.github.com
