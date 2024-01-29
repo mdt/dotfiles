@@ -132,12 +132,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Created by `pipx` on 2021-08-03 18:28:50
-export PATH="$PATH:/Users/mdt/Library/Python/3.9/bin"
-
-# Created by `pipx` on 2021-08-03 18:28:58
-export PATH="$PATH:/Users/mdt/.local/bin"
-
 eval "$(_GITLINT_COMPLETE=zsh_source gitlint)"
 source /opt/local/share/fzf/shell/key-bindings.zsh
 source /opt/local/share/fzf/shell/completion.zsh
