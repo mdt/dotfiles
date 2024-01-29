@@ -1,6 +1,6 @@
 {
     "terminal.integrated.fontFamily": "MesloLGS NF",
-    "workbench.colorTheme": "Solarized Dark",
     "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "Solarized Dark"
 }
